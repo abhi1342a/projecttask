@@ -1,0 +1,39 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="4">
+            <item index="0" class="java.lang.String" itemvalue="call" />
+            <item index="1" class="java.lang.String" itemvalue="jquery" />
+            <item index="2" class="java.lang.String" itemvalue="jquery.min.js" />
+            <item index="3" class="java.lang.String" itemvalue="fontawesome-free" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyInterpreterInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E402" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="cart.models.Cart.DoesNotExist" />
+          <option value="cart.models.Cart.objects" />
+          <option value="shopapp.models.Product.objects" />
+          <option value="cart.models.CartItem.objects" />
+          <option value="cart.models.CartItem.DoesNotExist" />
+          <option value="cv2.VideoCapture" />
+          <option value="cv2.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

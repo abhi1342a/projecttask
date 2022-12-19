@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>Home</title>
+<head>
+     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+ t9
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+    <style>
+a:link, a:visited {
+  background-color: black;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+    <style>
+a:link, a:visited {
+  background-color: black;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: black;
+}
+</style>
+
+
+</head>
+<body>
+<div class="navbar">
+    <a href="{% url 'schoolapp:login' %}">Login</a>
+  <a href="{% url 'schoolapp:register' %}">Registration</a>
+  <div class="dropdown">
+    <button class="dropbtn">Department
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a>
+      <a href="https://en.wikipedia.org/wiki/Commerce">Commerce</a>
+      <a href="https://en.wikipedia.org/wiki/Mathematics">Mathematics</a>
+         <a href="https://en.wikipedia.org/wiki/Physics">Physics</a>
+         <a href="https://en.wikipedia.org/wiki/Sociology">Sociology</a>
+    </div>
+  </div>
+</div>
+<!--<center><a href="http://localhost:63342/pythonProject/login.html?_ijt=v73ap976qugm4aegsjmmcnf33&_ij_reload=RELOAD_ON_SAVE" target="_blank">Login</a></center>-->
+
+</body>
+</html>

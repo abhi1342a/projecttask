@@ -1,0 +1,251 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+
+
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+
+
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 1000px;
+  padding: 5px;
+  background-color: white;
+}
+
+
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus, .form-container input[type=date]:focus, .form-container input[type=email]:focus, .form-container input[type=textarea]:focus, .form-container input[type=tel]:focus{
+
+
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 2%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+    <style>
+    .nested-dropdowns {
+    /* Border */
+    border: 1px solid #d1d5db;
+    display: flex;
+
+    /* Reset list styles */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nested-dropdowns li {
+    cursor: pointer;
+
+    /* Spacing */
+    padding: 0.25rem;
+
+    /* Used to position the sub nested-dropdowns */
+    position: relative;
+}
+
+/* The sub nested-dropdowns */
+.nested-dropdowns ul {
+    /* Border */
+    border: 2px solid #d1d5db;
+
+    /* Hidden by default */
+    display: none;
+
+    /* Absolute position */
+    left: 0;
+    position: absolute;
+    top: 100%;
+
+    /* Reset styles */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* The second level sub nested-dropdowns */
+.nested-dropdowns ul ul {
+    left: 100%;
+    position: absolute;
+    top: 0;
+}
+
+/* Change background color of list item when being hovered */
+.nested-dropdowns li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Show the direct sub nested-dropdowns when hovering the list item */
+.nested-dropdowns li:hover > ul {
+    display: block;
+}
+</style>
+</head>
+<body>
+<button class="open-button" onclick="openForm()">Open Form</button>
+<div class="form-popup" id="myForm">
+  <form  class="form-container">
+      <form action="{{loc}}" method="POST">
+
+    Name:
+      <input type="text" placeholder="Enter name" name="name">
+      <br>
+    Date of birth:
+      <input type="date" placeholder="Enter name" name="dob">
+      <br>
+    age:<input type="Text" placeholder="Enter your age" name="age">
+      <br>
+   gender:
+    <input type="radio"  name="gender" value="male">male
+    <input type="radio"  name="gender" value="female">female
+      <br>
+     phone number:
+    <input type="text" placeholder="Enter phone number" name="ph" >
+      <br>
+    Mail ID:<input type="email" placeholder="Enter address" name="add">
+      <br>
+   address:
+    <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+      <br>
+<ul class="nested-dropdowns">
+
+    <li>
+        <div class="nested-dropdowns__item">
+            select the subject
+            <div class="nested-dropdowns__arrow"></div>
+        </div>
+        <ul>
+            <li  value="commerse">
+                <div class="nested-dropdowns__item">
+                    commerse
+                    <div class="nested-dropdowns__arrow"></div>
+                </div>
+                <ul>
+                    <li value="bcom">bcom</li>
+                    <li value="bba">bba</li>
+                    <li value="mcom">mcom</li>
+                    <li value="mba">mba</li>
+                </ul>
+            <li value="cs">
+                <div class="nested-dropdowns__item">
+                    computer science
+                    <div class="nested-dropdowns__arrow"></div>
+                </div>
+                <ul>
+                    <li value="bca">bca</li>
+                    <li value="computer science">Bsc computer science</li>
+                    <li value="mca">mca</li>
+                    <li value="msc">msc computer science</li>
+                </ul>
+            <li value="english">
+                <div class="nested-dropdowns__item">
+                    english
+                    <div class="nested-dropdowns__arrow"></div>
+                </div>
+                <ul>
+                    <li value="ba">BA english</li>
+                    <li value="ma">Ma English</li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </li>
+</ul>
+
+Choose the purpose
+<select name="purpose" id="purpose">
+  <option value="enquiry">enquiry</option>
+  <option value="placeorder">Place order</option>
+  <option value="return">return</option>
+  <option value="exchange">exchange</option>
+</select>
+      <br>
+material provided:
+     <input type="checkbox" name="mail" >note book
+    <input type="checkbox" name="mail" >pen
+    <input type="checkbox" name="mail" >pencil<br>
+
+      <input type="submit">
+
+       </form>
+  </form>
+</div>
+
+<script>
+<!--function clicked() {-->
+<!--    alert('submitted');-->
+
+<!--    }-->
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+<!--function closeForm() {-->
+<!--  document.getElementById("myForm").style.display = "none";-->
+<!--}-->
+
+<!--// When the user scrolls down 20px from the top of the document, slide down the navbar-->
+<!--window.onscroll = function() {scrollFunction()};-->
+
+<!--function scrollFunction() {-->
+<!--  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {-->
+<!--    document.getElementById("navbar").style.top = "0";-->
+<!--  } else {-->
+<!--    document.getElementById("navbar").style.top = "-50px";-->
+<!--  }-->
+<!--}-->
+</script>
+
+</body>
+</html>
